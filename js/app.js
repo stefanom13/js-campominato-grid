@@ -7,6 +7,8 @@ const gridElement = document.querySelector('.grid')
 // salviamo il click nella variabile startgame
 const startGame = () => {
     console.log('inizia il gioco');
+    gridElement.innerHTML = '';
+
 
     // impostare la modalità di gioco
     // leggere value select con modalità selezionata da utente
@@ -39,7 +41,7 @@ const startGame = () => {
 
     // determinare numero totale di celle da generare
     const cellNumber = rows * columns;
-    const cellSIze = `calc ( 100% / ${columns} )`;
+    const cellSIze = `calc( 100% / ${columns})`;
     console.log(cellNumber);
 
     // genero la griglia
