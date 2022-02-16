@@ -1,5 +1,7 @@
 const buttonPlay = document.getElementById('buttonPlay')
 const controlsOption = document.getElementById('mode')
+const gridElement = document.querySelector('.grid')
+
 
 
 // salviamo il click nella variabile startgame
@@ -8,23 +10,23 @@ const startGame = () => {
 
     // impostare la modalità di gioco
     // leggere value select con modalità selezionata da utente
-    const mode = parseInt(controlsOption.value);
-    let rows;
-    let columns;
+    const mode = controlsOption.value;
+    let rows, columns, cellSize;
+
 
     // determinare numero righe e colonne
     switch (mode) {
-        case 1:
+        case '1':
             rows = 10;
             columns = 10;
             break;
 
-        case 2:
+        case '2':
             rows = 9;
             columns = 9;
             break;
 
-        case 3:
+        case '3':
             rows = 7;
             columns = 7;
             break;
@@ -37,12 +39,25 @@ const startGame = () => {
 
     // determinare numero totale di celle da generare
     const cellNumber = rows * columns;
+    const cellSIze = `calc ( 100% / ${columns} )`;
     console.log(cellNumber);
+
     // genero la griglia
-
-
     // faccio un ciclo da 1 a tot celle = righe * colonne
-    // genero una cella
+    for (let i = 0; i < cellNumber; i++) {
+        // genero una cella
+        const cell = document.createElement('div');
+        cell.style.width = cellSIze;
+        cell.append(i + 1);
+        cell.classList.add('cell');
+        gridElement.appendChild(cell);
+
+
+    }
+
+
+
+
     // aggiungo il contenuto
     // aggiungo la classe cell
     // appendere cella dentro griglia
