@@ -24,6 +24,11 @@ header .cont-img {
   gap: 4px;
   flex-shrink: 1;
 }
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
 
 /* main  */
 
